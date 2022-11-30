@@ -9,6 +9,16 @@ from models import storage
 main = Blueprint("main", __name__)
 
 
+def len_counter(rates):
+    """Reterive the length of the users who rated the food"""
+    len_rate = 0
+    for rate in rates:
+        if rate == 0:
+            continue
+        len_rate =+ 1
+    return len_rate
+
+
 def rate_counter(rates):
     """Reterive dictionary of rate and their corresponding value"""
     count_dict = {}
@@ -30,7 +40,8 @@ def averageRate(rate):
     total = 0
     for num in rate:
         total += num
-    return round(total / len(rate) if len(rate) > 0 else 0, 1)
+    rate_len = len_counter(rate)
+    return round(total / rate_len if rate_len > 0 else 0, 1)
 
 
 @main.route("/")
@@ -82,7 +93,7 @@ def reviews():
     foodRate = [val.rate for val in reviews]
     food_rate = averageRate(foodRate)
     rate_list = rate_counter(foodRate)
-    rate_count = len(foodRate)
+    rate_count = len_counter(foodRate)
     if rate_count == 0:
         rate_count = 1
     return render_template("review.html", restaurant=restaurant,
