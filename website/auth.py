@@ -15,6 +15,7 @@ auth = Blueprint('auth', __name__)
 def login():
     """Reterive login page"""
     if current_user.is_authenticated:
+        flash("You are already logged in!")
         return redirect(url_for("main.restaurants"))
     return render_template("login.html")
 
@@ -22,6 +23,10 @@ def login():
 @auth.route("/login", methods=["POST"])
 def login_post():
     """check the existing of user and route to restaurant or admin page"""
+    if current_user.is_authenticated:
+        flash("You are already logged in!")
+        return redirect(url_for("main.restaurants"))
+    
     email = request.form.get("email")
     password = request.form.get("password")
     remember = True if request.form.get("remember") else False
@@ -33,6 +38,7 @@ def login_post():
     login_user(user, remember=remember)
     if current_user.is_admin:
         return redirect(url_for("admin.index"))
+    flash("You logged in successfully!")
     return redirect(url_for("main.restaurants"))
 
 
@@ -40,6 +46,7 @@ def login_post():
 def signup():
     """Reterive signup page"""
     if current_user.is_authenticated:
+        flash("You are already logged in!")
         return redirect(url_for("main.restaurants"))
     return render_template("signup.html")
 
