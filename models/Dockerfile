@@ -1,5 +1,6 @@
-FROM mysql:8.0.31
+FROM ubuntu:20.04
 
+RUN docker pull mysql:5.6
 RUN addgroup app && adduser -S -G app app
 USER app
 WORKDIR ./database
