@@ -1,10 +1,11 @@
-FROM ubuntu:20.04
+FROM python:3.11.0
 
 RUN addgroup app && adduser -S -G app app
+RUN mkdir web_static
 USER app
-WORKDIR ./v1
+WORKDIR ./web_static
 
-COPY . .
+COPY . ./
 EXPOSE 5000:80
 
 CMD [ "python3 -m", "gunicorn --bind 0.0.0.0:5000 main:app" ]
