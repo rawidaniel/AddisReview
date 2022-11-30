@@ -68,13 +68,19 @@ def create_app():
         """administrative interface index page"""
         def is_accessible(self):
             """method to add permission checks"""
-            if current_user.is_admin:
-                return current_user.is_authenticated
+            if current_user:
+                if current_user.is_admin:
+                    return current_user.is_authenticated
+            else:
+                return redirect(url_for("main.landing"))
 
         def inaccessible_callback(self, name, **kwargs):
             """Handle the response to inaccessible views"""
-            if not current_user.is_admin:
-                return redirect(url_for("main.restaurants"))
+            if current_user:
+                if not current_user.is_admin:
+                    return redirect(url_for("main.restaurants"))
+            else:
+                redirect(url_for("main.landing"))
 
     admin = Admin(app, 'Addisreview', url='/restaurants',
                   index_view=MyAdminIndexView(name="Home"))
@@ -90,30 +96,4 @@ def create_app():
     def load_user(user_id):
         """Reterive user object from the user ID stored in the session"""
         return storage.get_user_by_id(user_id)
-
-    @app.route('/api/rate', methods=["POST"])
-    def rate():
-        print(request.json["rate"])
-        result = {'status': 'success'}
-        return result, 201
-
-    @app.route('/api/review', methods=["GET", "POST", "DELETE"])
-    def review():
-        if request.method == "POST":
-            print(request.json["review_text"])
-            result = {'status': 'success'}
-            return result, 201
-        elif request.method == "DELETE":
-            print("review deleted")
-            result = {'status': 'success'}
-            return result, 204
-        elif request.method == "GET":
-            keys = ["rate", "review"]
-            values = [3, "I liked it so far"]
-            user_review = {}
-
-            for i in range(len(keys)):
-                user_review[keys[i]] = values[i]
-
-            return jsonify(user_review)
     return app
