@@ -62,6 +62,7 @@ def restaurants():
 
 
 @main.route("/foods")
+@login_required
 def foods():
     """Reterive foods pages"""
     restaurant_id = request.args.get("restaurant_id")
@@ -83,6 +84,7 @@ def foods():
 
 
 @main.route('/reviews')
+@login_required
 def reviews():
     """Reterive reviews page"""
     restaurant_id = request.args.get("restaurant_id")
