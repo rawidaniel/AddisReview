@@ -4,6 +4,7 @@ main #sceine-one {
   /*background-color: #003333;*/
   background: url(../images/webp/pudding.webp);
   background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   width: 100vw;
   padding-top: 60px;
