@@ -68,12 +68,12 @@ def create_app():
         """administrative interface index page"""
         def is_accessible(self):
             """method to add permission checks"""
-            if current_user.is_admin is True:
+            if current_user.is_admin:
                 return current_user.is_authenticated
 
         def inaccessible_callback(self, name, **kwargs):
             """Handle the response to inaccessible views"""
-            if current_user.is_admin is False:
+            if not current_user.is_admin:
                 return redirect(url_for("main.restaurants"))
 
     admin = Admin(app, 'Addisreview', url='/restaurants',
