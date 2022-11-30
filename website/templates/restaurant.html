@@ -104,13 +104,15 @@
       <div class="break head-line"></div>
 
       <!--Login Status of the user-->
-      <!--
+      
+      {% with messages = get_flashed_messages() %} {% if messages %}
       <div id="alert-user">
         <div class="alert alert-warning" role="alert">
-          You logged in successfully !
+          {{ messages[0] }}
         </div>
       </div>
-      -->
+      {% endif %} {% endwith %}
+      
 
       <!-- offcanvas for search menu
               <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
