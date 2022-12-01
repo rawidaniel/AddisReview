@@ -109,10 +109,14 @@
                 src="../static/images/uploads/{{food.image}}"
                 alt="Restaurant Image"
               />
-              <span class="price-food"
-                ><sup><i class="fa-sharp fa-regular fa-dollar-sign"></i></sup>
-                &nbsp; {{food.price}}</span
-              >
+              <div class="price-section">
+                <div class="price-area">
+                   <div class="inner-area">
+                      <span class="text"> ETB </span>
+                      <span class="price">{{food.price}}</span>
+                  </div>
+                </div>
+              </div>
               <div class="star-rate-noedit">
                 <i class="fa-regular fa-star" id="1"></i>
                 <i class="fa-regular fa-star" id="2"></i>
