@@ -75,6 +75,7 @@
           <li><a href="/#sceine-four">Help</a></li>
           {% if user_is_admin == True %}
           <li><a href="/admin">Admin</a></li>
+          <li><a href="/uploadphoto">Uploadphoto</a></li>
           {% endif %}
         </ul>
         <div class="ser-nav">
@@ -104,15 +105,12 @@
       <div class="break head-line"></div>
 
       <!--Login Status of the user-->
-      
+
       {% with messages = get_flashed_messages() %} {% if messages %}
       <div id="alert-user">
-        <div class="alert alert-warning" role="alert">
-          {{ messages[0] }}
-        </div>
+        <div class="alert alert-warning" role="alert">{{ messages[0] }}</div>
       </div>
       {% endif %} {% endwith %}
-      
 
       <!-- offcanvas for search menu
               <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
