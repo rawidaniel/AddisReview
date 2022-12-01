@@ -418,9 +418,19 @@ text {
 }
 
 .org #slogan,
-.org #school {
+.org #school,
+.org #link {
   align-self: flex-end;
   margin-right: 60px;
+}
+
+.org #link .fa-brands.fa-github {
+  color: white;
+}
+
+#insp + p {
+  padding-left: 60px;
+  color: white;
 }
 
 .fa-heart {
