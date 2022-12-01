@@ -25,6 +25,7 @@ body {
 nav {
   position: absolute !important;
   top: 0 !important;
+  height: auto !important;
 }
 
 main {
