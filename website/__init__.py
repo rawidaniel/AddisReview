@@ -59,7 +59,7 @@ def create_app():
                     return redirect(request.url)
             return render_template("uploadphoto.html")
         else:
-            return render_template("main.restaurants")
+            return redirect(url_for("main.restaurants"))
 
     from models import storage
     from models.food import Food
