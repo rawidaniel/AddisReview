@@ -50,9 +50,7 @@ form .txt_field {
   font-size: 16px;
   transition: width 0.5s;
 }
-label:hover {
-  width: 300px;
-}
+
 .txt_field span::before {
   content: "";
   position: absolute;
