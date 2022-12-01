@@ -13,9 +13,10 @@ def len_counter(rates):
     """Reterive the length of the users who rated the food"""
     len_rate = 0
     for rate in rates:
+        rate = int(rate)
         if rate == 0:
             continue
-        len_rate =+ 1
+        len_rate += 1
     return len_rate
 
 
