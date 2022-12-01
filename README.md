@@ -121,6 +121,12 @@ You should contact us:
 * [ABENEZER ESHETIE - GitHub](https://github.com/EbenGitHub)
 * [RAWI DANIEL - GitHub](https://github.com/rawidaniel)
 * [IKRAM AWOL - GitHub](https://github.com/rawidaniel)
+
+## Related Projects
+* AirBnB Clone
+
+## License
+ --
                                                                                                                                                            
                                                                                                                                                            
                                                                                                                                                            
