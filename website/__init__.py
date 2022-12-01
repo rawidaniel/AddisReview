@@ -58,6 +58,8 @@ def create_app():
                     flash('Allowed image types are - png, jpg, jpeg, gif')
                     return redirect(request.url)
             return render_template("uploadphoto.html")
+        else:
+            return render_template("main.restaurants")
 
     from models import storage
     from models.food import Food
