@@ -1,6 +1,7 @@
 @import url(./normalize.css);
 main {
   font-family: 'Kanit', sans-serif;
+  margin-bottom: 10rem;
 }
 
 main h1 {
