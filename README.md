@@ -25,7 +25,7 @@ __a website where you can review foods in addis__
 #
 
 ## Description
-`Addis-RevieW` is a food rating and commenting website made for those who live in Ethiopia, near Addis Ababa
+[`Addis-RevieW`](http://18.205.104.232:5000/) is a food rating and commenting website made for those who live in Ethiopia, near Addis Ababa
 
 ### How does it work?
 The website lists top restaurant in the capital city of Ethiopia and makes it easy for visitors, food travlers and tourists to chose where to dine before going there.
@@ -49,6 +49,7 @@ The website is made using docker. There are three containers to run on your mach
 docker pull Addis-review-FD
 ```
 ```bash
+docker run Addis-review-FD 
 docker exec -it Addis-review-FD bash
 ```
 to run it interactively or 
@@ -64,6 +65,7 @@ to run it on the background
 docker pull Addis-review-API
 ```
 ```bash
+docker exec Addis-review-API
 docker exec -it Addis-review-API bash
 ```
 to run it interactively or 
@@ -92,6 +94,7 @@ but as you know, this is depricated to use it in production environment
 docker pull Addis-review-FntEnd
 ```
 ```bash
+docker exec Addis-review-FntEnd
 docker exec -it Addis-review-FntEnd bash
 ```
 to run it interactively or 
