@@ -108,22 +108,22 @@ main .restaurant .img-restr {
   .price-section .price-area {
     height: 120px;
     width: 120px;
-    background: orangered;
+    background: orange;
     border-radius: 50%;
     padding: 2px;
   }
 
   .price-section .price-area:hover {
-    background: rgb(255, 190, 116);
+    background: orangered;
   }
 
   .price-section .price-area:hover .inner-area .text {
-    color: rgb(136, 116, 3);
+    color: white;
     font-weight: 500;
   }
 
   .price-section .price-area:hover .inner-area .price {
-    color: rgb(180, 49, 2);
+    color: lightgreen;
   }
 
   .price-section .price-area .inner-area {
@@ -140,7 +140,7 @@ main .restaurant .img-restr {
   .price-area .inner-area .text {
     font-size: 15px;
     font-weight: 400;
-    color: rgb(250, 209, 134);
+    color: lightgray;
     position: absolute;
     top: -30px;
     left: 17px;
@@ -149,8 +149,8 @@ main .restaurant .img-restr {
   .price-area .inner-area .price {
     font-size: 35px;
     font-weight: 500;
+    color: white;
   }
-
 
 
 #img-prc {
