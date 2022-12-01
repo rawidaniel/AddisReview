@@ -103,3 +103,7 @@ input[type="submit"] {
 .pass:hover {
   text-decoration: underline;
 }
+.checkbox_field {
+  margin-left: auto;
+  margin-right: auto;
+}
