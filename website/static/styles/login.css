@@ -51,6 +51,10 @@ form .txt_field {
   transition: width 0.5s;
 }
 
+input[type=checkbox] {
+  accent-color: orangered;
+}
+
 .txt_field span::before {
   content: "";
   position: absolute;
