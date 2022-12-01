@@ -290,12 +290,9 @@
                     <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
                   </div>
                 </div>
+                {% if review.text != None and review.text != "" %}
                 <div class="user-comment-txt">
-                  {% if review.text != None and review.text != "" %}
-                  
                   <p>{{review.text}}</p>
-                  
-                  {% endif %}
                 </div>
                 <hr />
                 <div class="user-ux">
@@ -309,6 +306,7 @@
                     ><i class="fa-solid fa-share-nodes"></i
                   ></span>
                 </div>
+                {% endif %}
               </div>
               {% endif %}
               {% endfor%}
