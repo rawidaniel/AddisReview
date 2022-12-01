@@ -259,8 +259,11 @@
           <hr />
           <div id="scr-cmt">
             <div class="others-comment">
-              <!---->
+              
+              
+              <!--Begin for loop-->
               {% for review in reviews%}
+              {% if (review.rate > 0.0 and review.rate <= 5.0) or (review.text != None and review.text != "")  %}
               <div class="user-comment-read comment-writer">
                 <div>
                   <div class="user-info">
@@ -307,7 +310,10 @@
                   ></span>
                 </div>
               </div>
+              {% endif %}
               {% endfor%}
+              <!--End for loop-->
+          
             </div>
           </div>
           <hr />
