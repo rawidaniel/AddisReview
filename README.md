@@ -123,7 +123,7 @@ You should contact us:
 ## Developers
 * [ABENEZER ESHETIE - GitHub](https://github.com/EbenGitHub)
 * [RAWI DANIEL - GitHub](https://github.com/rawidaniel)
-* [IKRAM AWOL - GitHub](https://github.com/rawidaniel)
+* [IKRAM AWOL - GitHub](https://github.com/ikramawol)
 
 ## Related Projects
 * AirBnB Clone
