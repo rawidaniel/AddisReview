@@ -1,0 +1,27 @@
+name: test for flask app for serving the page
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Flask
+      run: 
+          pip3 install flask gunicorn SQLAlchemy Flask-Admin Flask-Cors Flask-Login && echo "flask run successfully"
+
+    #- name: Run Python unit tests
+    #  run: python3 -u -m unittest tests/tests.py
+    
+    - name: Run Python Flask app
+      run: FLASK_APP=app flask run
+
+    #- name: Verify that the Docker image for the action builds
+      #run: docker compose up
+      #run: echo "docker file build successfully"
