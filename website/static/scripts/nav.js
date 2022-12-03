@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    
+    // Navigation system for mobile users
     $("#nav-menu").click(function(){
         $("nav").toggleClass("show", "hide")
         if ($("nav").hasClass("show")) {
