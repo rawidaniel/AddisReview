@@ -1,5 +1,9 @@
 @import url(./normalize.css);
 
+main {
+  margin-bottom: 15rem;
+}
+
 #off-can-triger {
   visibility: hidden;
   height: 0;
