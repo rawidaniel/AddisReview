@@ -15,6 +15,10 @@ jobs:
     - name: Set up Flask
       run: 
           pip3 install flask gunicorn SQLAlchemy Flask-Admin Flask-Cors Flask-Login && echo "flask run successfully"
+          apt-get install python3-dev \
+          && apt-get install libmysqlclient-dev \
+          && apt-get install zlib1g-dev \
+          && pip3 install mysqlclient && echo "mysqldb is installed and ready"
 
     #- name: Run Python unit tests
     #  run: python3 -u -m unittest tests/tests.py
