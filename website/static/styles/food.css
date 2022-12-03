@@ -1,5 +1,9 @@
 @import url(./normalize.css);
 
+main {
+  margin-bottom: 15rem;
+}
+
 .star-rate i {
   transition-duration: 0.3s;
 }
