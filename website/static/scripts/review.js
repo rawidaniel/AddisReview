@@ -1,5 +1,6 @@
 $(document).ready(() => {
-
+    
+    // JS Security and functionality scripts for writing review
     let postRight = true;
     let userId = $("input[type='hidden']").attr("data-user-id")
     let foodId = $("input[type='hidden']").attr("data-food-id")
@@ -197,10 +198,7 @@ $(document).ready(() => {
     $("#delete").click(function(){
         $("#loading-dlt").empty().html('<div class="spinner-border text-danger" \
         role="status"><span class="visually-hidden">Loading...</span></div>')
-        /*
-        let userId = $("input[type='hidden']").attr("data-user-id")
-        let foodId = $("input[type='hidden']").attr("data-food-id")
-        */
+        
        let textVal = ""
        console.log("partial DELETE method used")
         $.ajax({
@@ -352,33 +350,5 @@ $("#danger-btn").click(function(){
     });
     
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /**********************************JS FOR RATING****************************************** */
     
 })
