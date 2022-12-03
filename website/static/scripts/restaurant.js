@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  
+  // Search Navigation function script
   let previouState = $('.restaurants').html();
   let input = document.querySelector('input');
   input.addEventListener('input', async function () {
@@ -57,13 +59,5 @@ $(document).ready(function () {
       $('#ser-loading').empty();
     }
   });
-
-  /*
-    let myVar = setInterval(myTimer ,1000);
-    function myTimer() {
-    const d = new Date();
-    document.getElementById("time").innerHTML = d.toLocaleTimeString();
-    
-    }
-    */
+  
 });
