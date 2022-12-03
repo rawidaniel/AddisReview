@@ -26,8 +26,13 @@ __a website where you can review foods in addis__
 
 ## Description
 [`Addis-RevieW`](http://18.205.104.232:5000/) is a food rating and commenting website made for those who live in Ethiopia, near Addis Ababa
-> You can find [YT Demo Video here](https://youtu.be/fqli-IG-bbQ)
-> You can find [WebSite link here](http://18.205.104.232:5000/)
+> ##
+> You can find [YT Demo Video here 🔗](https://youtu.be/fqli-IG-bbQ)
+> ##
+> You can find [WebSite link here 🔗](http://18.205.104.232:5000/)
+> ##
+> You can find [GitHub Source code 🔗](https://github.com/rawidaniel/AddisReview/)
+> ##
 
 ### How does it work?
 The website lists top restaurant in the capital city of Ethiopia and makes it easy for visitors, food travlers and tourists to chose where to dine before going there.
@@ -165,3 +170,6 @@ You should contact us:
 
 
 ```
+
+
+[ALX SE School](https://alxafrica.com)
