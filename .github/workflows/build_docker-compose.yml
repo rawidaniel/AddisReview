@@ -12,15 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Flask
-      run: 
-          #pip3 install -r requirements.txt
-          #flask run
-          echo "flask run successfully"
-
-    #- name: Run Python unit tests
-    #  run: python3 -u -m unittest tests/tests.py
-
-    - name: Verify that the Docker image for the action builds
-      #run: docker compose up
-      run: echo "docker file build successfully"
+    - name: docker file build
+      run: docker compose up
+     
