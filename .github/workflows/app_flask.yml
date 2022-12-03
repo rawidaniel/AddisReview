@@ -15,7 +15,7 @@ jobs:
     - name: Set up Flask
       run: 
           sudo pip3 install flask gunicorn SQLAlchemy Flask-Admin Flask-Cors Flask-Login && echo "flask run successfully"
-          sudo apt-get install python3-dev \
+          && sudo apt-get install python3-dev \
           && sudo apt-get install libmysqlclient-dev \
           && sudo apt-get install zlib1g-dev \
           && sudo pip3 install mysqlclient && echo "mysqldb is installed and ready"
