@@ -105,7 +105,8 @@ $(document).ready(() => {
         
     })
 
-
+    
+    // Resetting the rate value
     $(".btn-dark").click(function(){
         $("#loading-star").empty().html('<div class="spinner-border text-warning" \
         role="status"><span class="visually-hidden">Loading...</span></div>')
