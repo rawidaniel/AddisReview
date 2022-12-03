@@ -1,9 +1,13 @@
 version: "3.8"
+
 services:
   frontend:
-    build: ./website
+    build: 
+      context: ./website
+      dockerfile: Dockerfile
     ports:
-      - 5000:80
+      - 80:80
+    restart: unless-stopped
   backend:
     build: ./api
     ports:
