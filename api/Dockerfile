@@ -1,7 +1,7 @@
 FROM python:3.11.0
 
-RUN addgroup app && adduser -S -G app app
-USER app
+# RUN addgroup app && adduser -S -G app app
+# USER app
 WORKDIR ./v1
 
 # COPY requirements.txt ./
