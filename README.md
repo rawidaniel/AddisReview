@@ -50,66 +50,27 @@ We always see other similar websites on the internet, but lets be honest, they d
 The website is made using docker. There are three containers to run on your machine if you like to run it on your PC. 
 
 ### Running the DataBase container
->The website uses `MySQL`.
+>The website uses `PostgreSQL`.
+> There is already premade docker image for our application namely `Dockerfile.postgres` and `Dockerfile.flask`
 >To run it using docker
 ```bash
-docker pull Addis-review-FD
-```
-```bash
-docker run Addis-review-FD 
-docker exec -it Addis-review-FD bash
+git clone https://github.com/rawidaniel/AddisReview.git
 ```
 to run it interactively or 
 ```bash
-docker exec Addis-review-FD
+docker-compose up
 ```
 to run it on the background
+```bash
+docker-compose up -d
+```
+to stop it
+```bash
+docker-compose down
+```
 
-### Running the APIs container
->The website uses `RESTful`.
->To run it using docker
-```bash
-docker pull Addis-review-API
-```
-```bash
-docker exec Addis-review-API
-docker exec -it Addis-review-API bash
-```
-to run it interactively or 
-```bash
-docker exec Addis-review-API
-```
-to run it on the background
-#
-Or to run it using flask
-- first you need to install required dependencies by running the following command, assuming you have python3 installed on your machine
-```python
-pip3 -r install requirements.txt
-```
-- Now you can run the app safely
-```python
-flask run
-```
-but as you know, this is depricated to use it in production environment
+> This will run all the front end (on PORT 5000), the backend and postgres DB (on PORT 5432)
 
-
-
-### Running the Forntend container
->The website uses `MySQL`.
->To run it using docker
-```bash
-docker pull Addis-review-FntEnd
-```
-```bash
-docker exec Addis-review-FntEnd
-docker exec -it Addis-review-FntEnd bash
-```
-to run it interactively or 
-```bash
-docker exec Addis-review-FntEnd
-```
-to run it on the background
-...
 if you have NGINX on your server and you know how to use it, you should use gunicorn for the application server.
 
 ## How to use the project
