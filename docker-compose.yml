@@ -1,25 +1,36 @@
-version: "3.8"
+version: '3'
 
 services:
-  frontend:
-    build: 
-      context: ./website
-      dockerfile: Dockerfile
+  my-postgres-container:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    environment:
+      POSTGRES_USER: hbnb_addis_review
+      POSTGRES_PASSWORD: addisreview
+      POSTGRES_DB: hbnb_addis_review_db
     ports:
-      - 80:80
-    restart: unless-stopped
-  backend:
-    build: ./api
+      - "5432:5432"
+    networks:
+      - my-network
+
+  my-flask-app-container:
+    build:
+      context: .
+      dockerfile: Dockerfile.flask
+    environment:
+      POSTGRES_USER: hbnb_addis_review
+      POSTGRES_PASSWORD: addisreview
+      POSTGRES_DB: hbnb_addis_review_db
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
     ports:
-      - 5001:5001
-    environment: 
-      DB_URL: mysqldb://db/addis
-      ADDIS_STORAGE: db 
-      ADDIS_USER: addis_user 
-      ADDIS_PWD: addis_pwd
-  db:
-    image: mysql:8.0.31
-    ports: 
-      - 3306:3306
-    #volumes:
-      #- addis_storage:/data/db
+      - "5000:5000"
+    depends_on:
+      - my-postgres-container
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
