@@ -7,7 +7,7 @@ Run flask application
 from os import getenv
 from website import create_app
 
-app_port = int(getenv("PORT", 5000))
+app_port = int(getenv("PORT", 10000))
 app = create_app()
 
 

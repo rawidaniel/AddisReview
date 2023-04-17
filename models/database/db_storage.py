@@ -24,14 +24,14 @@ class DBStorage:
         """
             Create engine and link to MySQL databse (hbnb_dev, hbnb_dev_db)
         """
-        user = getenv("POSTGRES_USER", "hbnb_addis_review")
-        pwd = getenv("POSTGRES_PASSWORD", "addisreview")
-        host = getenv("POSTGRES_HOST", "localhost")
-        db = getenv("POSTGRES_DB", "hbnb_addis_review_db")
-        db_provider = getenv("DB_PROVIDER", "local")
+        user = getenv("POSTGRES_USER", "Eenrics")
+        pwd = getenv("POSTGRES_PASSWORD", "hPMOTCNbqG41")
+        host = getenv("POSTGRES_HOST", "ep-weathered-fire-161690.us-east-2.aws.neon.tech")
+        db = getenv("POSTGRES_DB", "neondb")
+        db_provider = getenv("DB_PROVIDER", "neon")
 
         if db_provider == 'neon':
-            endpoint_id = getenv("ENDPOINT_ID")
+            endpoint_id = getenv("ENDPOINT_ID", "ep-weathered-fire-161690")
             db_uri = f"postgresql://{user}:{pwd}@{host}:5432/{db}?options=project%3D{endpoint_id}"
             self.__engine = create_engine(db_uri, connect_args={"sslmode": "require"})
         else:

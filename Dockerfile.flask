@@ -22,7 +22,7 @@ ENV POSTGRES_HOST=localhost
 ENV POSTGRES_PORT=5432
 
 # Expose the port that the Flask app will run on
-EXPOSE 5000 5432
+EXPOSE 10000 5432
 
 # Start the Flask app
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "wsgi:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:10000", "wsgi:app"]
