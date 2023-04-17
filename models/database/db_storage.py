@@ -11,7 +11,7 @@ from models.food import Food
 from models.restaurant import Restaurant
 from models.review import Review
 from models.user import User
-
+import psycopg2
 
 class DBStorage:
     """
@@ -28,7 +28,7 @@ class DBStorage:
         pwd = getenv("HBNB_MYSQL_PWD", "addisreview")
         host = getenv("HBNB_MYSQL_HOST", "localhost")
         db = getenv("HBNB_MYSQL_DB", "hbnb_addis_review_db")
-        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.format(
+        self.__engine = create_engine('postgresql://{}:{}@{}:5432/{}'.format(
             user, pwd, host, db), pool_pre_ping=True)
 
     def all(self, cls=None):
