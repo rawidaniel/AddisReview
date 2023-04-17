@@ -24,12 +24,18 @@ class DBStorage:
         """
             Create engine and link to MySQL databse (hbnb_dev, hbnb_dev_db)
         """
-        user = getenv("HBNB_MYSQL_USER", "hbnb_addis_review")
-        pwd = getenv("HBNB_MYSQL_PWD", "addisreview")
-        host = getenv("HBNB_MYSQL_HOST", "localhost")
-        db = getenv("HBNB_MYSQL_DB", "hbnb_addis_review_db")
-        self.__engine = create_engine('postgresql://{}:{}@{}:5432/{}'.format(
-            user, pwd, host, db), pool_pre_ping=True)
+        user = getenv("POSTGRES_USER", "hbnb_addis_review")
+        pwd = getenv("POSTGRES_PASSWORD", "addisreview")
+        host = getenv("POSTGRES_HOST", "localhost")
+        db = getenv("POSTGRES_DB", "hbnb_addis_review_db")
+        db_provider = getenv("DB_PROVIDER", "local")
+
+        if db_provider == 'neon':
+            endpoint_id = getenv("ENDPOINT_ID")
+            db_uri = f"postgresql://{user}:{pwd}@{host}:5432/{db}?options=project%3D{endpoint_id}"
+            self.__engine = create_engine(db_uri, connect_args={"sslmode": "require"})
+        else:
+            self.__engine = create_engine('postgresql://{}:{}@{}:5432/{}'.format(user, pwd, host, db), pool_pre_ping=True)
 
     def all(self, cls=None):
         """
