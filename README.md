@@ -49,7 +49,11 @@ We always see other similar websites on the internet, but lets be honest, they d
 ## How to run the project
 The website is made using docker. There are three containers to run on your machine if you like to run it on your PC. 
 
-### Running the DataBase container
+######
+> NOTE: If you want to use Docker to run the application, make sure you have machine with 4 Core CPU, 8GB RAM, 25GB Storage. Also make sure to install all dependencies before running the app, i.e. install `docker`, `docker-compose`, `python3` ... Otherwise you will have issue when running the application !
+######
+
+### Running the DataBase container from Docker-Compose Orchestration
 >The website uses `PostgreSQL`.
 > There is already premade docker image for our application namely `Dockerfile.postgres` and `Dockerfile.flask`
 >To run it using docker
@@ -70,6 +74,32 @@ docker-compose down
 ```
 
 > This will run all the front end (on PORT 5000), the backend and postgres DB (on PORT 5432)
+
+### Running the DataBase container Individually
+If you want to run the postgres SQL DB or the Flask APP separetly, you can do so.
+>Clone the github repository
+```bash
+git clone https://github.com/rawidaniel/AddisReview.git
+```
+>To build `PostgreSQL` Server Container
+```bash
+docker build -t my-postgres -f Dockerfile.postgres .
+```
+>To run the `PostgreSQL` Server Container
+```bash
+docker run -p 5432:5432 --name my-postgres-container -d my-postgres
+```
+######
+>To build `Flask APP` Server Container
+```bash
+docker build -t my-flask-app -f Dockerfile.flask .
+```
+>To run the `Flask APP` Server Container
+```bash
+docker run -p 5000:5000 --name my-flask-app-container --link my-postgres-container:database -d my-flask-app
+```
+######
+> NOTE: You might need to set up your own docker network for the Flask app to connect to Postgres database
 
 if you have NGINX on your server and you know how to use it, you should use gunicorn for the application server.
 
