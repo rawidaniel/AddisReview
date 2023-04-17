@@ -22,7 +22,7 @@ services:
       POSTGRES_USER: hbnb_addis_review
       POSTGRES_PASSWORD: addisreview
       POSTGRES_DB: hbnb_addis_review_db
-      POSTGRES_HOST: my-postgres-container
+      POSTGRES_HOST: localhost
       POSTGRES_PORT: 5432
     ports:
       - "5000:5000"
