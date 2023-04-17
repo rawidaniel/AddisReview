@@ -18,11 +18,11 @@ RUN pip install --no-cache-dir --upgrade pip &&\
 ENV POSTGRES_USER=hbnb_addis_review
 ENV POSTGRES_PASSWORD=addisreview
 ENV POSTGRES_DB=hbnb_addis_review_db
-ENV POSTGRES_HOST=database
+ENV POSTGRES_HOST=localhost
 ENV POSTGRES_PORT=5432
 
 # Expose the port that the Flask app will run on
 EXPOSE 5000 5432
 
 # Start the Flask app
-CMD ["python", "app.py"]
+CMD ["python", "-m flask run --host=0.0.0.0"]
