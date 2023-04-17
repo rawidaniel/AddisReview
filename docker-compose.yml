@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  my-postgres-container:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    environment:
+      POSTGRES_USER: hbnb_addis_review
+      POSTGRES_PASSWORD: addisreview
+      POSTGRES_DB: hbnb_addis_review_db
+    ports:
+      - "5432:5432"
+    networks:
+      - my-network
+
+  my-flask-app-container:
+    build:
+      context: .
+      dockerfile: Dockerfile.flask
+    environment:
+      POSTGRES_USER: hbnb_addis_review
+      POSTGRES_PASSWORD: addisreview
+      POSTGRES_DB: hbnb_addis_review_db
+      POSTGRES_HOST: my-postgres-container
+      POSTGRES_PORT: 5432
+    ports:
+      - "5000:5000"
+    depends_on:
+      - my-postgres-container
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
